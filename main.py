@@ -6,7 +6,7 @@ import logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-BOT_TOKEN = ''
+BOT_TOKEN = '8089563365:AAFGgxZzFqyg6iJMreaLTVLztxHiOOmK7GE'
 
 CHANNEL_USERNAME = '@peepekss'
 
@@ -20,9 +20,8 @@ async def is_user_subscribed(user_id: int, context: ContextTypes.DEFAULT_TYPE) -
 
 # Обработчик команды /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    user_id = update.message.from_user.id  # Получаем ID пользователя
+    user_id = update.message.from_user.id
     if await is_user_subscribed(user_id, context):
-        # Если пользователь подписан, показываем кнопки
         keyboard = [
             ["Ник", "Кодер"],
             ["Помощь"]
